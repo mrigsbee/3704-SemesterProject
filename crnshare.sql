@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2016 at 05:54 PM
+-- Generation Time: Nov 12, 2016 at 07:42 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -35,6 +35,13 @@ CREATE TABLE `crn` (
   `chatId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `crn`
+--
+
+INSERT INTO `crn` (`id`, `number`, `course_title`, `calendarId`, `forumId`, `chatId`) VALUES
+(1, 82470, 'CS 3704 Intermediate Software Design', 0, 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -45,6 +52,13 @@ CREATE TABLE `forum` (
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `forum`
+--
+
+INSERT INTO `forum` (`id`) VALUES
+(1);
+
 -- --------------------------------------------------------
 
 --
@@ -54,12 +68,20 @@ CREATE TABLE `forum` (
 CREATE TABLE `forumpost` (
   `id` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
+  `timestamp` date NOT NULL,
   `title` varchar(100) NOT NULL,
   `description` varchar(1000) NOT NULL,
   `tag` varchar(100) NOT NULL,
   `ratingId` int(11) NOT NULL,
   `forumId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `forumpost`
+--
+
+INSERT INTO `forumpost` (`id`, `userId`, `timestamp`, `title`, `description`, `tag`, `ratingId`, `forumId`) VALUES
+(1, 0, '2016-11-12', 'Can someone explain this?', 'I don''t understand _________. ', 'question', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -69,8 +91,18 @@ CREATE TABLE `forumpost` (
 
 CREATE TABLE `rating` (
   `id` int(11) NOT NULL,
-  `overall` int(11) NOT NULL
+  `rating` int(11) NOT NULL,
+  `postId` int(11) NOT NULL,
+  `userId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rating`
+--
+
+INSERT INTO `rating` (`id`, `rating`, `postId`, `userId`) VALUES
+(1, 4, 0, 0),
+(2, 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -86,6 +118,13 @@ CREATE TABLE `user` (
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `username`, `email`, `password`) VALUES
+(1, 'John Doe', 'jdoe', 'jdoe@vt.edu', '1234');
+
 -- --------------------------------------------------------
 
 --
@@ -97,6 +136,13 @@ CREATE TABLE `usercrn` (
   `userId` int(11) NOT NULL,
   `crnId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `usercrn`
+--
+
+INSERT INTO `usercrn` (`id`, `userId`, `crnId`) VALUES
+(1, 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -148,32 +194,32 @@ ALTER TABLE `usercrn`
 -- AUTO_INCREMENT for table `crn`
 --
 ALTER TABLE `crn`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `forumpost`
 --
 ALTER TABLE `forumpost`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `usercrn`
 --
 ALTER TABLE `usercrn`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

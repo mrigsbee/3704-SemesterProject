@@ -56,6 +56,7 @@ class User extends DbObject {
         $obj = $db->fetchById($id, __CLASS__, self::DB_TABLE);
         return $obj;
     }
+
     // load user by username
     public static function loadByUsername($username=null) {
         if($username === null)
@@ -73,26 +74,5 @@ class User extends DbObject {
             $obj = self::loadById($row['id']);
             return ($obj);
         }
-    }
-
-
-     // load user by username
-    public static function loadByEmail($email=null) {
-
-        if($email === null)
-            return null;
-        $query = sprintf(" SELECT id FROM %s WHERE email = '%s' ",
-            self::DB_TABLE,
-            $email
-            );
-        $db = Db::instance();
-        $result = $db->lookup($query);
-        if(!mysql_num_rows($result))
-            return null;
-        else {
-            $row = mysql_fetch_assoc($result);
-            $obj = self::loadById($row['id']);
-            return ($obj);
-        }
-    }
+    }  
 }
