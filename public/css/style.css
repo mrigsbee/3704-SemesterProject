@@ -332,3 +332,8 @@ body {
 	vertical-align: text-top;
 }
 /* END ELEMENT HOLDERS */
+
+div#newpost {
+	padding-left:20%;
+	padding-right:20%;
+}
