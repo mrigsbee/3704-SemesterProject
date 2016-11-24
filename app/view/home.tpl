@@ -68,7 +68,8 @@
 
                               <div id="edit_box">
                                   <form id="edit" method="POST" action="'.BASE_URL.'/editpost" class="form-horizontal" role="form">
-                                      <button id="edit_'.$post->get('id').'" class="edit_button" name="button">
+                                      <input type="hidden" name="edit" value="'.$post->get('id').'"/>
+                                      <button class="edit_button" name="button">
                                         <img style="width:20px;height:20px;" src="'.BASE_URL.'/public/images/edit.png"/>
                                       </button>
                                   </form>

@@ -20,6 +20,9 @@ class SiteController {
 			case 'editpost':
 				$this->editpost();
 				break;
+			case 'editpost_submit':
+				$this->editpost_submit();
+				break;
 			case 'newpost':
 				$this->newpost();
 				break;
@@ -62,7 +65,18 @@ class SiteController {
 	}
 
 	public function editpost(){
+		$postid = $_POST['edit'];
+
+		$post_row = ForumPost::loadById($postid);
+		$title = $post_row->get('title');
+		$body = $post_row->get('description');
+		$tag = $post_row->get('tag');
 		include_once SYSTEM_PATH.'/view/edit.tpl';
+	}
+	public function editpost_submit(){
+		$postid = $_POST['edit'];
+
+		include_once SYSTEM_PATH.'/view/home.tpl';
 	}
 
 	public function calendar(){

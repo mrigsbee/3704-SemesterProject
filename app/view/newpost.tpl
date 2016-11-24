@@ -57,7 +57,7 @@
 
           <div class="form-group">
             <label for="tag">Tag:</label>
-            <input type="text" class="form-control" id="tag">
+            <input type="text" class="form-control" name="tag">
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
       </form>
