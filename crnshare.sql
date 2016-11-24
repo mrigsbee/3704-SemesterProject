@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2016 at 07:42 PM
+-- Generation Time: Nov 24, 2016 at 10:08 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -40,7 +40,7 @@ CREATE TABLE `crn` (
 --
 
 INSERT INTO `crn` (`id`, `number`, `course_title`, `calendarId`, `forumId`, `chatId`) VALUES
-(1, 82470, 'CS 3704 Intermediate Software Design', 0, 0, 0);
+(1, 82470, 'CS 3704 Intermediate Software Design', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -81,7 +81,7 @@ CREATE TABLE `forumpost` (
 --
 
 INSERT INTO `forumpost` (`id`, `userId`, `timestamp`, `title`, `description`, `tag`, `ratingId`, `forumId`) VALUES
-(1, 0, '2016-11-12', 'Can someone explain this?', 'I don''t understand _________. ', 'question', 0, 0);
+(1, 1, '2016-11-12', 'Can someone explain this?', 'I don''t understand _________. ', 'question', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -101,8 +101,8 @@ CREATE TABLE `rating` (
 --
 
 INSERT INTO `rating` (`id`, `rating`, `postId`, `userId`) VALUES
-(1, 4, 0, 0),
-(2, 1, 0, 1);
+(1, 4, 1, 1),
+(2, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -142,7 +142,7 @@ CREATE TABLE `usercrn` (
 --
 
 INSERT INTO `usercrn` (`id`, `userId`, `crnId`) VALUES
-(1, 0, 0);
+(1, 1, 1);
 
 --
 -- Indexes for dumped tables
