@@ -47,7 +47,7 @@
     <form method="POST" action="<?= BASE_URL ?>/newpost_submit" class="form-horizontal" role="form">
         <div class="form-group">
             <label for="title">Title:</label>
-            <input type="text" class="form-control" name="title">
+            <textarea class="form-control" rows="1" name="title"></textarea>
           </div>
 
           <div class="form-group form-group-lg">
@@ -57,7 +57,7 @@
 
           <div class="form-group">
             <label for="tag">Tag:</label>
-            <input type="text" class="form-control" name="tag">
+            <textarea class="form-control" rows="1" name="tag"></textarea>
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
       </form>

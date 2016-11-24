@@ -74,9 +74,22 @@ class SiteController {
 		include_once SYSTEM_PATH.'/view/edit.tpl';
 	}
 	public function editpost_submit(){
-		$postid = $_POST['edit'];
+		$postid = $_POST['postid'];
+		$post = ForumPost::loadById($postid);
 
-		include_once SYSTEM_PATH.'/view/home.tpl';
+		$title = $_POST['title'];
+		$body = $_POST['description'];
+		$tag = $_POST['tag'];
+		$timestamp = date("Y-m-d", time());
+
+		$post = ForumPost::loadById($postid);
+		$post->set('title', $title);
+		$post->set('description', $body);
+		$post->set('tag', $tag);
+		$post->set('timestamp', $timestamp);
+		$post->save();
+
+		header('Location: '.BASE_URL);
 	}
 
 	public function calendar(){
