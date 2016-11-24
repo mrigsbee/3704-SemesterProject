@@ -52,7 +52,7 @@
 
 /* START TABLE ELEMENTS */
 th#t1, td#t1 {
-    border: 1px solid #D1D1D1;
+    border: 1px solid teal;
     padding: 5px;
     min-width: 30px;
 }
