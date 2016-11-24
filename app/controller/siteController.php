@@ -74,6 +74,11 @@ class SiteController {
 		include_once SYSTEM_PATH.'/view/edit.tpl';
 	}
 	public function editpost_submit(){
+		if (isset($_POST['Cancel'])) {
+			header('Location: '.BASE_URL);
+			exit();
+		}
+
 		$postid = $_POST['postid'];
 		$post = ForumPost::loadById($postid);
 
@@ -104,6 +109,11 @@ class SiteController {
 		include_once SYSTEM_PATH.'/view/newpost.tpl';
 	}
 	public function newpost_submit(){
+		if (isset($_POST['Cancel'])) {
+			header('Location: '.BASE_URL);
+			exit();
+		}
+
 		$title = $_POST['title'];
 		$description = $_POST['description'];
 		$tag = $_POST['tag'];

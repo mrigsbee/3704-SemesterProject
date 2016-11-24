@@ -46,7 +46,7 @@
     <div id="newpost">
     <form method="POST" action="<?= BASE_URL ?>/editpost_submit" class="form-horizontal" role="form">
         <div class="form-group">
-            <input type="hidden" class="form-control" name="postid" value=<?php echo $postid ?>>          
+            <input type="hidden" class="form-control" name="postid" value=<?php echo $postid ?>>
         </div>
 
         <div class="form-group">
@@ -63,7 +63,9 @@
             <label for="tag">Tag:</label>
             <textarea class="form-control" rows="1" name="tag"><?php echo $tag ?></textarea>
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+
+          <input type="submit" name="Cancel" alt="Cancel" class="submit btn-danger" value="Cancel"/>
+          <input type="submit" name="submit" alt="submit" class="submit btn-success" value="Submit"/>
       </form>
   </div>
 

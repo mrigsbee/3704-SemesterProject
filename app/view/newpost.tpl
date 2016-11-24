@@ -59,7 +59,9 @@
             <label for="tag">Tag:</label>
             <textarea class="form-control" rows="1" name="tag"></textarea>
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+
+          <input type="submit" name="Cancel" class="submit btn-danger" alt="Cancel" value="Cancel"/>
+          <input type="submit" name="submit" alt="submit btn-success" class="submit" value="Submit"/>
       </form>
   </div>
 
