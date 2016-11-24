@@ -2,8 +2,8 @@
 
 <head>
   <title>CRNShare</title>
-  <link href="<?= BASE_URL ?>/public/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?= BASE_URL ?>/public/css/style.css" type="text/css" rel="stylesheet">
+  <link href="<?= BASE_URL ?>/public/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
 </head>
@@ -21,7 +21,7 @@
 
     <div id="flat_rectangle">
       <ul class="tabrow">
-        <li class="selected"><a href="<?= BASE_URL ?>">Home</a></li>
+        <li class="selected">Home</li>
         <li><a href="<?= BASE_URL ?>/calendar/">Calendar</a></li>
         <li><a href="<?= BASE_URL ?>/chat/">Chat</a></li>
       </ul>

@@ -42,7 +42,7 @@
 
 
     <!-- Form -->
-    <span><h1>Create a New Forum Post</h1></span>
+    <span><h1>Edit Post</h1></span>
     <div id="newpost">
     <form method="POST" action="<?= BASE_URL ?>/editpost_submit" class="form-horizontal" role="form">
         <div class="form-group">
