@@ -81,5 +81,15 @@ class ForumPost extends DbObject {
             return ($objects);
         }
     }
+
+    public function delete()
+    {
+        $db = Db::instance();
+        $query = sprintf(" DELETE FROM %s  WHERE id = '%s'",
+            self::DB_TABLE,
+            $this->id
+        );
+        mysql_query($query);
+    }
 }
 ?>

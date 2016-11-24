@@ -76,10 +76,11 @@
                                   </form>
                               </div>
 
-
-                              <div id="delete_box"><button id="delete_'.$post->get('id').'" class="delete_button" name="button">
-                                <img style="width:20px;height:20px;" src="'.BASE_URL.'/public/images/trash.png"/>
-                              </button></div>
+                              <div id="delete_box">
+                                  <button id="delete_'.$post->get('id').'" class="delete" name="button">
+                                    <img style="width:20px;height:20px;" src="'.BASE_URL.'/public/images/trash.png"/>
+                                  </button>
+                              </div>
 
                             </td>
                 		</tr>
@@ -107,6 +108,24 @@
 
   </div>
   <script type="text/javascript" src="<?= BASE_URL ?>/public/js/main.js"></script>
+  <script>
+      $('.delete').click(function(){
+
+          var id = $(this).attr('id');
+          var res = id.split("_");
+          var postid = res[1];
+
+          $.post(
+              '/CRNShare/deletepost/?',
+               {
+                "postid": postid
+               }, "json")
+              .done(function(data){
+
+              });
+
+      });
+  </script>
 </body>
 
 </html>

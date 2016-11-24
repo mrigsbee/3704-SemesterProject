@@ -23,6 +23,9 @@ class SiteController {
 			case 'newpost':
 				$this->newpost();
 				break;
+			case 'deletepost':
+				$this->deletepost();
+				break;
 			// case 'signup':
 			// 	$this->signup();
 			// 	break;
@@ -54,6 +57,25 @@ class SiteController {
 
 	public function newpost(){
 		include_once SYSTEM_PATH.'/view/newpost.tpl';
+	}
+
+	public function deletepost(){
+		// $postid = $_POST['postid'];
+		// $post_row = ForumPost::loadById($postid);
+		// $post_author_id = $post_row->get('userId');
+		// $post_author = User::loadById($post_author_id);
+		//
+		// //user is the author of the post, allow delete
+		// if($post_author->get('username') == $_SESSION['username']){
+		// 	$post_row->delete();
+		// }
+		//
+		// header('Location: '.BASE_URL);
+
+
+		//just for testing
+		header('Location: '.BASE_URL.'/editpost');
+		exit();
 	}
 
 	// public function signup(){
