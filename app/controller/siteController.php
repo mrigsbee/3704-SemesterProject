@@ -14,8 +14,11 @@ class SiteController {
 	// route us to the appropriate class method for this action
 	public function route($action) {
 		switch($action) {
-			case 'test':
-				$this->test();
+			case 'home':
+				$this->home();
+				break;
+			case 'editpost':
+				$this->editpost();
 				break;
 			// case 'signup':
 			// 	$this->signup();
@@ -29,11 +32,21 @@ class SiteController {
 		}
 	}
 
-    public function test() {
+    public function home() {
 		//self::loggedInCheck();
 
+		//Get forumid associated with the current crn
+		$crnid = 1; //Not implemented
+		$crn_row = Crn::loadById($crnid);
+		$forumid = $crn_row->get('forumId');
 
-		include_once SYSTEM_PATH.'/view/test.tpl';
+		//retrieve all posts from the forum
+		$posts = ForumPost::getAllPosts($forumid);
+		include_once SYSTEM_PATH.'/view/home.tpl';
+	}
+
+	public function editpost(){
+		include_once SYSTEM_PATH.'/view/edit.tpl';
 	}
 
 	// public function signup(){

@@ -46,7 +46,7 @@ class ForumPost extends DbObject {
 
         $db_properties = array(
             'userId' => $this->userId,
-            'timestamp' => $this->timestamp;
+            'timestamp' => $this->timestamp,
             'title' => $this->title,
             'description' => $this->description,
             'tag' => $this->tag,

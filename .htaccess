@@ -5,5 +5,5 @@ RewriteEngine on
 # ErrorDocument 404 /app/controller/error.php
 
 # Site
-# RewriteRule ^$ app/controller/siteController.php?action=home [QSA,L]
-RewriteRule ^$ app/controller/siteController.php?action=test [QSA,L]
+RewriteRule ^$ app/controller/siteController.php?action=home [QSA,L]
+RewriteRule ^editpost/?$ app/controller/siteController.php?action=editpost [QSA,L]
