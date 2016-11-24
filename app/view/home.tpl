@@ -36,16 +36,27 @@
           <a href="#">CRN 22222</a>
         </div>
       </div>
+  </div>
+
+    <div id="tall_rectangle">
     </div>
 
-    <div id="tall_rectangle"></div>
 
     <!-- New forum post button -->
-    <form id="newforumpost" method="POST" action="<?= BASE_URL ?>/newpost" class="form-horizontal" role="form">
-        <button>
-          New Forum Post
-        </button>
-    </form>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <form id="newforumpost" method="POST" action="<?= BASE_URL ?>/newpost" class="form-horizontal" role="form">
+                <button>New Forum Post</button>
+            </form>
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
+    </div>
+
 
     <!-- Forum Posts  -->
     <table id="t1">
@@ -92,11 +103,11 @@
                               </div>
 
                               <div id="delete_box">
-                              <form id="delete" method="POST" action="'.BASE_URL.'/deletepost" class="form-horizontal" role="form">
-                                  <input type="hidden" name="delete" value="'.$post->get('id').'"/>
-                                  <button>
-                                    <img style="width:20px;height:20px;" src="'.BASE_URL.'/public/images/trash.png"/>
-                                  </button>
+                                  <form id="delete" method="POST" action="'.BASE_URL.'/deletepost" class="form-horizontal" role="form">
+                                      <input type="hidden" name="delete" value="'.$post->get('id').'"/>
+                                      <button>
+                                        <img style="width:20px;height:20px;" src="'.BASE_URL.'/public/images/trash.png"/>
+                                      </button>
                                   </form>
                               </div>
 

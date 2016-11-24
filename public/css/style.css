@@ -1,11 +1,11 @@
 /* START CLICKABLES */
-#edit_box {
+div#edit_box {
 	width: 20px;
 	height: 20px;
 	float: right;
 }
 
-#delete_box {
+div#delete_box {
 	width: 20px;
 	height: 20px;
 	float: right;
@@ -26,13 +26,12 @@
 
 #newforumpost {
     background-color: #35659c;
-    float: right;
     color: white;
     font-family: "Helvetica";
     padding: 5px;
-    font-size: 10px;
+    font-size: 15px;
 	border: solid 1px #D1D1D1;
-    margin: 5px 205px 5px 5px;
+	text-align: center;
 }
 
 #comments {
@@ -59,9 +58,9 @@ th#t1, td#t1 {
 
 table#t1 {
     border: 2px solid #35989c;
-    margin-left: 5px;
+    margin-left: 5%;
     float: left;
-	width: 590px;
+	width: 90%;
 	background-color: lightblue;
 	border-collapse: collapse;
     text-align: center;
@@ -74,7 +73,7 @@ table#t1 {
 table#t2 {
     margin-left: 5px;
     float: left;
-	width: 500px;
+	width: 95%;
 	background-color: lightblue;
 	border-collapse: collapse;
     text-align: left;
@@ -302,7 +301,7 @@ body {
 	margin: 0px auto;
 }
 
-#tall_rectangle {
+div#tall_rectangle {
 	width: auto;
 	height: 55px;
 	margin-right:auto;
