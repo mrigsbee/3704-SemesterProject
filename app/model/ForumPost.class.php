@@ -64,7 +64,7 @@ class ForumPost extends DbObject {
     }
 
     public static function getAllPosts($forumId){
-        $query = sprintf(" SELECT * FROM %s WHERE forumid=%s ORDER BY timestamp DESC",
+        $query = sprintf(" SELECT * FROM %s WHERE forumid=%s ORDER BY id DESC",
             self::DB_TABLE,
             $forumId
         );

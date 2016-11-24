@@ -67,7 +67,6 @@ class SiteController {
 
 		//retrieve all posts from the forum
 		$posts = ForumPost::getAllPosts($forumid);
-		$posts = array_reverse($posts); //reverse so most recent posts are at the top
 		include_once SYSTEM_PATH.'/view/home.tpl';
 	}
 
