@@ -3,6 +3,8 @@
 <head>
   <title>CRNShare</title>
   <link href="<?= BASE_URL ?>/public/css/style.css" type="text/css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
 </head>
 
 <body>
@@ -37,11 +39,18 @@
 
     <div id="tall_rectangle"></div>
 
+    <!-- Calendar  -->
     <div id="cal_box"><img src="<?= BASE_URL ?>/public/images/calendar.png" alt="Calendar" style="width:200px;height:200px;"></div>
-    <div id="newforumpost">New Forum Post</div>
+
+    <!-- New forum post button -->
+    <form id="newforumpost" method="POST" action="<?= BASE_URL ?>/newpost" class="form-horizontal" role="form">
+        <button>
+          New Forum Post
+        </button>
+    </form>
+
+    <!-- Forum Posts  -->
     <table id="t1">
-
-
         <?php
         if($posts != null){
             foreach($posts as $post){
@@ -57,16 +66,20 @@
                 			<td>
                             <h2>'.$post->get('title').'</h2>
 
-                              <div id="edit_box"><button id="edit_'.$post->get('id').'" class="edit_button" name="button">
-                                <img style="width:20px;height:20px;" src="'.BASE_URL.'/public/images/edit.png"/>
-                              </button></div>
+
+
+                              <div id="edit_box">
+                                  <form id="edit" method="POST" action="'.BASE_URL.'/editpost" class="form-horizontal" role="form">
+                                      <button id="edit_'.$post->get('id').'" class="edit_button" name="button">
+                                        <img style="width:20px;height:20px;" src="'.BASE_URL.'/public/images/edit.png"/>
+                                      </button>
+                                  </form>
+                              </div>
+
+
                               <div id="delete_box"><button id="delete_'.$post->get('id').'" class="delete_button" name="button">
                                 <img style="width:20px;height:20px;" src="'.BASE_URL.'/public/images/trash.png"/>
                               </button></div>
-
-
-
-
 
                             </td>
                 		</tr>
@@ -93,27 +106,7 @@
     <div id="chat_box"><img src="<?= BASE_URL ?>/public/images/chat.png" alt="Chat" style="width:200px;height:250px;"></div>
 
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
   <script type="text/javascript" src="<?= BASE_URL ?>/public/js/main.js"></script>
-  <script>
-  $('.edit_button').click(function(){
-
-          var id = $(this).attr('id');
-          var res = id.split("_");
-          var edit = res[0];
-          var postid = res[1];
-
-          $.post(
-              '/CRNShare/editpost/?',
-              {
-                "postid": postid
-               }, "json")
-              .done(function(data){
-          });
-
-      });
-  </script>
 </body>
 
 </html>
