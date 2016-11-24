@@ -2,8 +2,8 @@
 
 <head>
   <title>CRNShare</title>
-  <link href="<?= BASE_URL ?>/public/css/style.css" type="text/css" rel="stylesheet">
   <link href="<?= BASE_URL ?>/public/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?= BASE_URL ?>/public/css/style.css" type="text/css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
 </head>
@@ -60,8 +60,8 @@
             <textarea class="form-control" rows="1" name="tag"></textarea>
           </div>
 
-          <input type="submit" name="Cancel" class="submit btn-danger" alt="Cancel" value="Cancel"/>
-          <input type="submit" name="submit" alt="submit btn-success" class="submit" value="Submit"/>
+          <input type="submit" name="Cancel" class="btn-danger" alt="Cancel" value="Cancel"/>
+          <input type="submit" name="submit" class="btn-success" alt="submit" value="Submit"/>
       </form>
   </div>
 

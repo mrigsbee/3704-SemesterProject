@@ -64,8 +64,8 @@
             <textarea class="form-control" rows="1" name="tag"><?php echo $tag ?></textarea>
           </div>
 
-          <input type="submit" name="Cancel" alt="Cancel" class="submit btn-danger" value="Cancel"/>
-          <input type="submit" name="submit" alt="submit" class="submit btn-success" value="Submit"/>
+          <input type="submit" name="Cancel" alt="Cancel" class="btn-danger" value="Cancel"/>
+          <input type="submit" name="submit" alt="submit" class="btn-success" value="Submit"/>
       </form>
   </div>
 
