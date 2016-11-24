@@ -1,8 +1,8 @@
-$("li").click(function(e) {
-  e.preventDefault();
-  $("li").removeClass("selected");
-  $(this).addClass("selected");
-});
+// $("li").click(function(e) {
+//   e.preventDefault();
+//   $("li").removeClass("selected");
+//   $(this).addClass("selected");
+// });
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */

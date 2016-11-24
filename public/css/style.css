@@ -271,14 +271,14 @@ body {
 #cal_box {
 	width: 200px;
 	height: 200px;
-	float: left;
+	margin-left: 32%;
+	/*float: left;*/
 }
 
 #chat_box {
-	width: 200px;
-	height: 250px;
-	float: right;
-	/*margin-top:582px;*/
+	/*width: 200px;*/
+	/*height: 250px;*/
+	margin-left: 40%;
 }
 
 #flat_rectangle {

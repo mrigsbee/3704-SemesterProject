@@ -21,8 +21,8 @@
     <div id="flat_rectangle">
       <ul class="tabrow">
         <li class="selected">Home</li>
-        <li>Calendar</li>
-        <li>Chat</li>
+        <li><a href="<?= BASE_URL ?>/calendar/">Calendar</a></li>
+        <li><a href="<?= BASE_URL ?>/chat/">Chat</a></li>
       </ul>
     </div>
 
@@ -40,7 +40,7 @@
     <div id="tall_rectangle"></div>
 
     <!-- Calendar  -->
-    <div id="cal_box"><img src="<?= BASE_URL ?>/public/images/calendar.png" alt="Calendar" style="width:200px;height:200px;"></div>
+    <!-- <div id="cal_box"><img src="<?= BASE_URL ?>/public/images/calendar.png" alt="Calendar" style="width:200px;height:200px;"></div> -->
 
     <!-- New forum post button -->
     <form id="newforumpost" method="POST" action="<?= BASE_URL ?>/newpost" class="form-horizontal" role="form">
