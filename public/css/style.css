@@ -62,12 +62,12 @@ table#t1 {
     margin-left: 5px;
     float: left;
 	width: 590px;
-	background-color: #9c3935;
+	background-color: lightblue;
 	border-collapse: collapse;
     text-align: center;
 	font-family: "Helvetica";
 	font-size: 14px;
-	color: white;
+	color: red;
 	vertical-alignment: middle;
 }
 
@@ -75,7 +75,7 @@ table#t2 {
     margin-left: 5px;
     float: left;
 	width: 500px;
-	background-color: #9c3935;
+	background-color: lightblue;
 	border-collapse: collapse;
     text-align: left;
 	font-family: "Helvetica";
@@ -89,7 +89,7 @@ h1 {
 	text-align: center;
 	font-family: "Helvetica";
 	font: 24pt;
-	color: #9c3935;
+	color: #35659c;
 }
 
 h2 {
