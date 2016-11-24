@@ -104,7 +104,6 @@
     ?>
 	</table>
 
-    <div id="chat_box"><img src="<?= BASE_URL ?>/public/images/chat.png" alt="Chat" style="width:200px;height:250px;"></div>
 
   </div>
   <script type="text/javascript" src="<?= BASE_URL ?>/public/js/main.js"></script>
@@ -121,8 +120,14 @@
                 "postid": postid
                }, "json")
               .done(function(data){
-
-              });
+                alert("shit works dog");
+              })
+              .fail(function(jqXHR, textStatus, errorThrown){
+              console.log(jqXHR);
+              console.log(textStatus);
+              console.log(errorThrown);
+          alert("Ajax error: could not reach server. " + errorThrown);
+          });
 
       });
   </script>
