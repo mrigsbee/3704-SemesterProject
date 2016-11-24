@@ -46,6 +46,7 @@ class SiteController {
 
     public function home() {
 		//self::loggedInCheck();
+		$_SESSION['username'] = "jdoe";
 
 		//Get forumid associated with the current crn
 		$crnid = 1; //Not implemented
@@ -74,7 +75,7 @@ class SiteController {
 	}
 
 	public function deletepost(){
-		$postid = $_POST['postid'];
+		$postid = $_POST['delete'];
 		$post_row = ForumPost::loadById($postid);
 		$post_author_id = $post_row->get('userId');
 		$post_author = User::loadById($post_author_id);
@@ -86,7 +87,6 @@ class SiteController {
 
 		//refresh page
 		header('Location: '.BASE_URL);
-		exit();
 	}
 
 	// public function signup(){
