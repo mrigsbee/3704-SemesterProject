@@ -60,7 +60,7 @@
                         <!-- Upvote button -->
                 		<div id="up_vote">
                             <form id="edit" method="POST" action="'.BASE_URL.'/upvote" class="form-horizontal" role="form">
-                                <input type="hidden" name="edit" value="'.$post->get('id').'"/>
+                                <input type="hidden" name="upvote" value="'.$post->get('id').'"/>
                                 <button >
                                   <img style="width:20px;height:20px;float:center;" src="'.BASE_URL.'/public/images/up_arrow.png"/>
                                 </button>
@@ -70,7 +70,7 @@
                         <!-- Downvote button -->
                 		<div id="down_vote">
                             <form id="edit" method="POST" action="'.BASE_URL.'/downvote" class="form-horizontal" role="form">
-                                <input type="hidden" name="edit" value="'.$post->get('id').'"/>
+                                <input type="hidden" name="downvote" value="'.$post->get('id').'"/>
                                 <button >
                                   <img style="width:20px;height:20px;float:center;" src="'.BASE_URL.'/public/images/down_arrow.png"/>
                                 </button>

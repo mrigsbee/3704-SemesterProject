@@ -47,6 +47,12 @@ class SiteController {
 			case 'chat':
 				$this->chat();
 				break;
+			case 'upvote':
+				$this->upvote();
+				break;
+			case 'downvote':
+				$this->downvote();
+				break;
 		}
 	}
 
@@ -103,6 +109,30 @@ class SiteController {
 
 	public function chat(){
 		include_once SYSTEM_PATH.'/view/chat.tpl';
+	}
+
+	public function upvote(){
+		$postid = $_POST['upvote'];
+		$post = ForumPost::loadById($postid);
+
+		$ratingid = $post->get('ratingId');
+		$rating = Rating::loadById($ratingid);
+
+		$rating->inc();
+
+		header('Location: '.BASE_URL);
+	}
+
+	public function downvote(){
+		$postid = $_POST['downvote'];
+		$post = ForumPost::loadById($postid);
+
+		$ratingid = $post->get('ratingId');
+		$rating = Rating::loadById($ratingid);
+
+		$rating->dec();
+
+		header('Location: '.BASE_URL);
 	}
 
 	public function newpost(){
