@@ -21,8 +21,8 @@
     <div id="flat_rectangle">
       <ul class="tabrow">
         <li><a href="<?= BASE_URL ?>">Home</a></li>
-        <li class="selected"><a href="<?= BASE_URL ?>/calendar/">Calendar</a></li>
-        <li><a href="<?= BASE_URL ?>/chat/">Chat</a></li>
+        <li><a href="<?= BASE_URL ?>/calendar/">Calendar</a></li>
+        <li class="selected"><a href="<?= BASE_URL ?>/chat/">Chat</a></li>
       </ul>
     </div>
 
@@ -40,10 +40,10 @@
     <div id="tall_rectangle"></div>
 
     <!-- Calendar  -->
-    <div id="cal_box"><img src="<?= BASE_URL ?>/public/images/calendar.png" alt="Calendar" "></div>
 
 
 
+    <div id="chat_box"><img src="<?= BASE_URL ?>/public/images/chat.png" alt="Chat" s"></div>
 
   </div>
   <script type="text/javascript" src="<?= BASE_URL ?>/public/js/main.js"></script>

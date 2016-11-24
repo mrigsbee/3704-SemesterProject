@@ -8,4 +8,5 @@ RewriteEngine on
 RewriteRule ^$ app/controller/siteController.php?action=home [QSA,L]
 RewriteRule ^editpost/?$ app/controller/siteController.php?action=editpost [QSA,L]
 RewriteRule ^calendar/?$ app/controller/siteController.php?action=calendar [QSA,L]
+RewriteRule ^chat/?$ app/controller/siteController.php?action=chat [QSA,L]
 RewriteRule ^newpost/?$ app/controller/siteController.php?action=newpost [QSA,L]
