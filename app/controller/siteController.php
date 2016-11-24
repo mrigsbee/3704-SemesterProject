@@ -29,6 +29,9 @@ class SiteController {
 			// case 'postlogin':
 			// 	$this->postlogin();
 			// 	break;
+			case 'calendar':
+				$this->calendar();
+				break;
 		}
 	}
 
@@ -47,6 +50,10 @@ class SiteController {
 
 	public function editpost(){
 		include_once SYSTEM_PATH.'/view/edit.tpl';
+	}
+
+	public function calendar(){
+		include_once SYSTEM_PATH.'/view/calendar.tpl';
 	}
 
 	// public function signup(){

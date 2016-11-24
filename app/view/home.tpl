@@ -19,8 +19,8 @@
     <div id="flat_rectangle">
       <ul class="tabrow">
         <li class="selected">Home</li>
-        <li>Calendar</li>
-        <li>Chat</li>
+        <li><a href="<?= BASE_URL ?>/calendar/">Calendar</a></li>
+        <li><a href="<?= BASE_URL ?>/chat/">Chat</a></li>
       </ul>
     </div>
 
