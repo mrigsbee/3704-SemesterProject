@@ -56,16 +56,13 @@
                 		<tr>
                 			<td>
                             <h2>'.$post->get('title').'</h2>
-                			  <div id="delete_box"><img src="'.BASE_URL.'/public/images/trash.png" alt="Delete Forum Post" style="width:20px;height:20px;"></div>
-                			  <div id="edit_box"><img src="'.BASE_URL.'/public/images/edit.png" alt="Edit Forum Post" style="width:20px;height:20px;"></div>
 
-
-
-
-
-                              <button id="edit_'.$post->get('id').'" class="edit_button" name="button" value="action2">
+                              <div id="edit_box"><button id="edit_'.$post->get('id').'" class="edit_button" name="button">
                                 <img style="width:20px;height:20px;" src="'.BASE_URL.'/public/images/edit.png"/>
-                              </button>
+                              </button></div>
+                              <div id="delete_box"><button id="delete_'.$post->get('id').'" class="delete_button" name="button">
+                                <img style="width:20px;height:20px;" src="'.BASE_URL.'/public/images/trash.png"/>
+                              </button></div>
 
 
 
@@ -113,7 +110,6 @@
                 "postid": postid
                }, "json")
               .done(function(data){
-
           });
 
       });
