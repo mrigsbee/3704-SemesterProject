@@ -65,18 +65,22 @@ class Rating extends DbObject {
         }
     }
 
-    //calculates the average rating for a specific post
-    public static function calcAvg($postId){
-        $ratings = self::getAllRatingsByPost($postId);
-        $sum = 0;
-        $counter = 0;
-        foreach($ratings as $rate){
-            $value = $rate->get('rating');
-            $sum += $value;
-            $counter++;
-        }
-        $average = $sum / $counter;
-        return $average;
+    public function inc(){
+       $db = Db::instance();
+       $query = sprintf(" UPDATE %s SET rating=rating+1 WHERE id = '%s'",
+           self::DB_TABLE,
+           $this->id
+       );
+       mysql_query($query);
+    }
+
+    public function dec(){
+       $db = Db::instance();
+       $query = sprintf(" UPDATE %s SET rating=rating-1 WHERE id = '%s'",
+           self::DB_TABLE,
+           $this->id
+       );
+       mysql_query($query);
     }
 
    // Get the rating given by a user for a specific post
