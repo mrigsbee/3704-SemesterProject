@@ -60,21 +60,18 @@ class SiteController {
 	}
 
 	public function deletepost(){
-		// $postid = $_POST['postid'];
-		// $post_row = ForumPost::loadById($postid);
-		// $post_author_id = $post_row->get('userId');
-		// $post_author = User::loadById($post_author_id);
-		//
-		// //user is the author of the post, allow delete
-		// if($post_author->get('username') == $_SESSION['username']){
-		// 	$post_row->delete();
-		// }
-		//
-		// header('Location: '.BASE_URL);
+		$postid = $_POST['postid'];
+		$post_row = ForumPost::loadById($postid);
+		$post_author_id = $post_row->get('userId');
+		$post_author = User::loadById($post_author_id);
 
+		//user is the author of the post, allow delete
+		if($post_author->get('username') == $_SESSION['username']){
+			$post_row->delete();
+		}
 
-		//just for testing
-		header('Location: '.BASE_URL.'/editpost');
+		//refresh page
+		header('Location: '.BASE_URL);
 		exit();
 	}
 
