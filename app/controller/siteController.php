@@ -23,6 +23,9 @@ class SiteController {
 			case 'newpost':
 				$this->newpost();
 				break;
+			case 'newpost_submit':
+				$this->newpost_submit();
+				break;
 			case 'deletepost':
 				$this->deletepost();
 				break;
@@ -46,7 +49,7 @@ class SiteController {
 
     public function home() {
 		//self::loggedInCheck();
-		$_SESSION['username'] = "jdoe";
+		$_SESSION['username'] = "jdoe"; //change this ******************************************************************************************
 
 		//Get forumid associated with the current crn
 		$crnid = 1; //Not implemented
@@ -72,6 +75,36 @@ class SiteController {
 
 	public function newpost(){
 		include_once SYSTEM_PATH.'/view/newpost.tpl';
+	}
+	public function newpost_submit(){
+		$title = $_POST['title'];
+		$description = $_POST['description'];
+		$tag = $_POST['tag'];
+		$timestamp = date("Y-m-d", time());
+		$author = $_SESSION['username'];
+
+		//get author's id
+		$user_row = User::loadByUsername($author);
+		$userid = $user_row->get('id');
+
+		//add a rating
+		$rating = new Rating();
+		$rating->set('userId', $userid);
+		$rating->set('rating', 0);
+		$rating->save();
+
+		$post = new ForumPost();
+		$post->set('userId', $userid);
+		$post->set('timestamp', $timestamp);
+		$post->set('title', $title);
+		$post->set('description', $description);
+		$post->set('tag', $tag);
+		$post->set('ratingId', $rating->get('id'));
+		$post->set('forumId', 1); //hardcoded, only 1 CRN page exists
+		$post->save();
+
+		$rating->set('postId', $post->get('id'));
+		header('Location: '.BASE_URL);
 	}
 
 	public function deletepost(){

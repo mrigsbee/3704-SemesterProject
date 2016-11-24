@@ -3,6 +3,7 @@
 <head>
   <title>CRNShare</title>
   <link href="<?= BASE_URL ?>/public/css/style.css" type="text/css" rel="stylesheet">
+  <link href="<?= BASE_URL ?>/public/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
 </head>
@@ -39,9 +40,6 @@
 
     <div id="tall_rectangle"></div>
 
-    <!-- Calendar  -->
-    <!-- <div id="cal_box"><img src="<?= BASE_URL ?>/public/images/calendar.png" alt="Calendar" style="width:200px;height:200px;"></div> -->
-
     <!-- New forum post button -->
     <form id="newforumpost" method="POST" action="<?= BASE_URL ?>/newpost" class="form-horizontal" role="form">
         <button>
@@ -54,19 +52,19 @@
         <?php
         if($posts != null){
             foreach($posts as $post){
+                $rating_row = Rating::loadById($post->get('ratingId'));
+                $rating = $rating_row->get('rating');
                 echo '
               	    <tr>
                 	<td id="t1">
                 		<div id="up_vote"><img src="'.BASE_URL.'/public/images/up_arrow.png" alt="Up Vote" style="width:20px;height:20px;float:center;"></div>
-                		<h3>5</h3>
+                		<h3>'.$rating.'</h3>
                 		<div id="down_vote"><img src="'.BASE_URL.'/public/images/down_arrow.png" alt="Down Vote" style="width:20px;height:20px;float:center;"></div>
                 	</td>
                 	<td id="t1"><table id="t2">
                 		<tr>
                 			<td>
                             <h2>'.$post->get('title').'</h2>
-
-
 
                               <div id="edit_box">
                                   <form id="edit" method="POST" action="'.BASE_URL.'/editpost" class="form-horizontal" role="form">
@@ -107,10 +105,9 @@
     ?>
 	</table>
 
-
   </div>
   <script type="text/javascript" src="<?= BASE_URL ?>/public/js/main.js"></script>
-
+  <script src="<?= BASE_URL ?>/public/js/bootstrap.min.js"></script>
 </body>
 
 </html>

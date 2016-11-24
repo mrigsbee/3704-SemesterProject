@@ -10,4 +10,5 @@ RewriteRule ^editpost/?$ app/controller/siteController.php?action=editpost [QSA,
 RewriteRule ^calendar/?$ app/controller/siteController.php?action=calendar [QSA,L]
 RewriteRule ^chat/?$ app/controller/siteController.php?action=chat [QSA,L]
 RewriteRule ^newpost/?$ app/controller/siteController.php?action=newpost [QSA,L]
+RewriteRule ^newpost_submit/?$ app/controller/siteController.php?action=newpost_submit [QSA,L]
 RewriteRule ^deletepost/?$ app/controller/siteController.php?action=deletepost [QSA,L]
