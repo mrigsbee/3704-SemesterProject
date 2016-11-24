@@ -57,9 +57,25 @@
                 echo '
               	    <tr>
                 	<td id="t1">
-                		<div id="up_vote"><img src="'.BASE_URL.'/public/images/up_arrow.png" alt="Up Vote" style="width:20px;height:20px;float:center;"></div>
+                        <!-- Upvote button -->
+                		<div id="up_vote">
+                            <form id="edit" method="POST" action="'.BASE_URL.'/upvote" class="form-horizontal" role="form">
+                                <input type="hidden" name="edit" value="'.$post->get('id').'"/>
+                                <button >
+                                  <img style="width:20px;height:20px;float:center;" src="'.BASE_URL.'/public/images/up_arrow.png"/>
+                                </button>
+                            </form>
+                        </div>
                 		<h3>'.$rating.'</h3>
-                		<div id="down_vote"><img src="'.BASE_URL.'/public/images/down_arrow.png" alt="Down Vote" style="width:20px;height:20px;float:center;"></div>
+                        <!-- Downvote button -->
+                		<div id="down_vote">
+                            <form id="edit" method="POST" action="'.BASE_URL.'/downvote" class="form-horizontal" role="form">
+                                <input type="hidden" name="edit" value="'.$post->get('id').'"/>
+                                <button >
+                                  <img style="width:20px;height:20px;float:center;" src="'.BASE_URL.'/public/images/down_arrow.png"/>
+                                </button>
+                            </form>
+                        </div>
                 	</td>
                 	<td id="t1"><table id="t2">
                 		<tr>
@@ -68,7 +84,8 @@
 
                               <div id="edit_box">
                                   <form id="edit" method="POST" action="'.BASE_URL.'/editpost" class="form-horizontal" role="form">
-                                      <button id="edit_'.$post->get('id').'" class="edit_button" name="button">
+                                      <input type="hidden" name="edit" value="'.$post->get('id').'"/>
+                                      <button class="edit_button" name="button">
                                         <img style="width:20px;height:20px;" src="'.BASE_URL.'/public/images/edit.png"/>
                                       </button>
                                   </form>

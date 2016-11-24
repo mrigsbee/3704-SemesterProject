@@ -20,6 +20,9 @@ class SiteController {
 			case 'editpost':
 				$this->editpost();
 				break;
+			case 'editpost_submit':
+				$this->editpost_submit();
+				break;
 			case 'newpost':
 				$this->newpost();
 				break;
@@ -62,7 +65,31 @@ class SiteController {
 	}
 
 	public function editpost(){
+		$postid = $_POST['edit'];
+
+		$post_row = ForumPost::loadById($postid);
+		$title = $post_row->get('title');
+		$body = $post_row->get('description');
+		$tag = $post_row->get('tag');
 		include_once SYSTEM_PATH.'/view/edit.tpl';
+	}
+	public function editpost_submit(){
+		$postid = $_POST['postid'];
+		$post = ForumPost::loadById($postid);
+
+		$title = $_POST['title'];
+		$body = $_POST['description'];
+		$tag = $_POST['tag'];
+		$timestamp = date("Y-m-d", time());
+
+		$post = ForumPost::loadById($postid);
+		$post->set('title', $title);
+		$post->set('description', $body);
+		$post->set('tag', $tag);
+		$post->set('timestamp', $timestamp);
+		$post->save();
+
+		header('Location: '.BASE_URL);
 	}
 
 	public function calendar(){
