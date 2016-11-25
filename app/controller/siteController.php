@@ -223,6 +223,8 @@ class SiteController {
 		//user is the author of the post, allow delete
 		if($post_author->get('username') == $_SESSION['username']){
 			$post_row->delete();
+		} else {
+			$_SESSION['info'] = "You can only delete posts you have created.";
 		}
 
 		//refresh page
