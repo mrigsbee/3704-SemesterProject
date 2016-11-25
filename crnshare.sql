@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2016 at 03:55 PM
+-- Generation Time: Nov 25, 2016 at 07:03 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -96,13 +96,6 @@ CREATE TABLE `rating` (
   `userId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `rating`
---
-
-INSERT INTO `rating` (`id`, `rating`, `postId`, `userId`) VALUES
-(14, 2, 14, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -142,19 +135,6 @@ CREATE TABLE `usercrn` (
 
 INSERT INTO `usercrn` (`id`, `userId`, `crnId`) VALUES
 (1, 1, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `userrating`
---
-
-CREATE TABLE `userrating` (
-  `id` int(11) NOT NULL,
-  `userid` int(11) NOT NULL,
-  `ratingid` int(11) NOT NULL,
-  `vote` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -199,12 +179,6 @@ ALTER TABLE `usercrn`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `userrating`
---
-ALTER TABLE `userrating`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -227,7 +201,7 @@ ALTER TABLE `forumpost`
 -- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `user`
 --
@@ -238,11 +212,6 @@ ALTER TABLE `user`
 --
 ALTER TABLE `usercrn`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `userrating`
---
-ALTER TABLE `userrating`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
