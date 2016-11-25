@@ -72,12 +72,24 @@ class SiteController {
 
 	public function editpost(){
 		$postid = $_POST['edit'];
-
 		$post_row = ForumPost::loadById($postid);
-		$title = $post_row->get('title');
-		$body = $post_row->get('description');
-		$tag = $post_row->get('tag');
-		include_once SYSTEM_PATH.'/view/edit.tpl';
+
+		$authorid = $post_row->get('userId');
+		$user = User::loadById($authorid);
+		$username = $user->get('username');
+
+		//check if author of the post is the logged in user
+		if($_SESSION['username'] != $username){
+			$_SESSION['info'] = "You can only edit posts of which you are the author of.";
+			header('Location: '.BASE_URL);
+			exit();
+		} else {
+			//allow access to edit post
+			$title = $post_row->get('title');
+			$body = $post_row->get('description');
+			$tag = $post_row->get('tag');
+			include_once SYSTEM_PATH.'/view/edit.tpl';
+		}
 	}
 	public function editpost_submit(){
 		if (isset($_POST['Cancel'])) {

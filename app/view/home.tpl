@@ -41,6 +41,20 @@
     <div id="tall_rectangle">
     </div>
 
+       <!-- Info dialog; shown if user tries to edit a post they are not the author of -->
+       <span id="info">
+           <?php
+               if(isset($_SESSION['info']))
+               {
+                   if($_SESSION['info'] != '')
+                   {
+                       echo '<div class="alert alert-info" role="alert">'.$_SESSION["info"].'</div>';
+                       $_SESSION['info'] = '';
+                   }
+               }
+           ?>
+       </span>
+
 
     <!-- New forum post button -->
     <div class="container">
