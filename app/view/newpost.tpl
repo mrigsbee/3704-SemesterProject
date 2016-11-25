@@ -17,7 +17,7 @@
 
   <div id="main">
 
-    <h1>CRNShare</h1>
+    <h1 class='elegantshadow'>Create a New Forum Post</h1>
 
     <div id="flat_rectangle">
       <ul class="tabrow">
@@ -42,7 +42,7 @@
 
 
     <!-- Form -->
-    <span><h1>Create a New Forum Post</h1></span>
+    <!-- <span><h1>Create a New Forum Post</h2></span> -->
     <div id="newpost">
     <form method="POST" action="<?= BASE_URL ?>/newpost_submit" class="form-horizontal" role="form">
         <div class="form-group">

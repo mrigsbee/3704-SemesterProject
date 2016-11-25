@@ -17,7 +17,7 @@
 
   <div id="main">
 
-    <h1>CRNShare</h1>
+    <h1 class='elegantshadow'>CRNShare</h1>
 
     <div id="flat_rectangle">
       <ul class="tabrow">

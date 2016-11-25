@@ -2,8 +2,8 @@
 
 <head>
   <title>CRNShare</title>
-  <link href="<?= BASE_URL ?>/public/css/style.css" type="text/css" rel="stylesheet">
   <link href="<?= BASE_URL ?>/public/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?= BASE_URL ?>/public/css/style.css" type="text/css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
 </head>
@@ -17,7 +17,7 @@
 
   <div id="main">
 
-    <h1>CRNShare</h1>
+    <h1 class='elegantshadow'>Edit Post</h1>
 
     <div id="flat_rectangle">
       <ul class="tabrow">
@@ -42,7 +42,7 @@
 
 
     <!-- Form -->
-    <span><h1>Edit Post</h1></span>
+    <!-- <span><h1>Edit Post</h1></span> -->
     <div id="newpost">
     <form method="POST" action="<?= BASE_URL ?>/editpost_submit" class="form-horizontal" role="form">
         <div class="form-group">
