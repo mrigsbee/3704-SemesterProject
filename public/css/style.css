@@ -34,18 +34,13 @@ div#delete_box {
 	text-align: center;
 }
 
-#comments {
+p.comments {
 	text-align: left;
-	width: 80px;
 	font-family: "Helvetica";
-	font-size: .83em;
+	font-size: 10px;
 	color: white;
     font-weight: bold;
-}
-
-#comments:hover, #comments:focus {
-    color: #35659c;
-    background: #D1D1D1;
+	margin-top: 20px;
 }
 /* END CLICKABLES */
 
@@ -71,7 +66,7 @@ table#t1 {
 }
 
 table#t2 {
-    margin-left: 5px;
+    margin-left: 10px;
     float: left;
 	width: 95%;
 	background-color: lightblue;
