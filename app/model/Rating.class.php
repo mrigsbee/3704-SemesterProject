@@ -65,27 +65,20 @@ class Rating extends DbObject {
         }
     }
 
-    public function inc(){
-       $db = Db::instance();
-       $query = sprintf(" UPDATE %s SET rating=rating+1 WHERE id = '%s'",
-           self::DB_TABLE,
-           $this->id
-       );
-       mysql_query($query);
-    }
+    public function calcTotal($postid){
+        $ratings = self::getAllRatingsByPost($postid);
+        if($ratings == null) return 0;
 
-    public function dec(){
-       $db = Db::instance();
-       $query = sprintf(" UPDATE %s SET rating=rating-1 WHERE id = '%s'",
-           self::DB_TABLE,
-           $this->id
-       );
-       mysql_query($query);
+        $total = 0;
+        foreach ($ratings as $rating) {
+            $total += $rating->get('rating');
+        }
+        return $total;
     }
 
    // Get the rating given by a user for a specific post
    // Used to show the user they have rated a post
-   public static function loadByUserAndPostId($postId, $userId) {
+   public static function loadByUserAndPostId($userId, $postId) {
        $query = sprintf(" SELECT * FROM %s WHERE postId = '%s' AND userId='%s' ",
            self::DB_TABLE,
            $postId,
@@ -100,6 +93,16 @@ class Rating extends DbObject {
            $obj = self::loadById($row['id']);
            return ($obj);
        }
+   }
+
+   public function delete()
+   {
+       $db = Db::instance();
+       $query = sprintf(" DELETE FROM %s  WHERE id = '%s'",
+           self::DB_TABLE,
+           $this->id
+       );
+       mysql_query($query);
    }
 }
 ?>

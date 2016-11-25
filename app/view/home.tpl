@@ -64,29 +64,49 @@
         if($posts != null){
             foreach($posts as $post){
                 $rating_row = Rating::loadById($post->get('ratingId'));
-                $rating = $rating_row->get('rating');
+                $overall = Rating::calcTotal($post->get('id'));
                 echo '
               	    <tr>
-                	<td id="t1">
-                        <!-- Upvote button -->
-                		<div id="up_vote">
-                            <form id="edit" method="POST" action="'.BASE_URL.'/upvote" class="form-horizontal" role="form">
-                                <input type="hidden" name="upvote" value="'.$post->get('id').'"/>
-                                <button >
-                                  <img style="width:20px;height:20px;float:center;" src="'.BASE_URL.'/public/images/up_arrow.png"/>
-                                </button>
-                            </form>
-                        </div>
-                		<h3>'.$rating.'</h3>
-                        <!-- Downvote button -->
-                		<div id="down_vote">
-                            <form id="edit" method="POST" action="'.BASE_URL.'/downvote" class="form-horizontal" role="form">
-                                <input type="hidden" name="downvote" value="'.$post->get('id').'"/>
-                                <button >
-                                  <img style="width:20px;height:20px;float:center;" src="'.BASE_URL.'/public/images/down_arrow.png"/>
-                                </button>
-                            </form>
-                        </div>
+                	<td id="t1">';
+                        //keep track of which buttons to show
+                        $upvote = true;
+                        $downvote = true;
+
+                        //get user's id and the rating id
+                        $user = User::loadByUsername($_SESSION['username']);
+                		$userid = $user->get('id');
+
+                        //hide buttons if the user already voted
+                        $rating = Rating::loadByUserAndPostId($userid, $post->get('id'));
+                        if($rating != null){
+                            $vote = $rating->get('rating');
+                            if($vote == 1) $upvote = false;
+                            else if($vote == -1) $downvote = false;
+                        }
+                        // Upvote button
+                        if($upvote){
+                    		echo '<div id="up_vote">
+                                <form id="edit" method="POST" action="'.BASE_URL.'/upvote" class="form-horizontal" role="form">
+                                    <input type="hidden" name="upvote" value="'.$post->get('id').'"/>
+                                    <button >
+                                      <img style="width:20px;height:20px;float:center;" src="'.BASE_URL.'/public/images/up_arrow.png"/>
+                                    </button>
+                                </form>
+                            </div>';
+                        }
+                		echo '<h3>'.$overall.'</h3>';
+                        // Downvote button
+                        if($downvote){
+                    		echo '<div id="down_vote">
+                                <form id="edit" method="POST" action="'.BASE_URL.'/downvote" class="form-horizontal" role="form">
+                                    <input type="hidden" name="downvote" value="'.$post->get('id').'"/>
+                                    <button >
+                                      <img style="width:20px;height:20px;float:center;" src="'.BASE_URL.'/public/images/down_arrow.png"/>
+                                    </button>
+                                </form>
+                            </div>';
+                        }
+                    echo '
                 	</td>
                 	<td id="t1"><table id="t2">
                 		<tr>

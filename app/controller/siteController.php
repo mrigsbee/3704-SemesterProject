@@ -112,25 +112,52 @@ class SiteController {
 	}
 
 	public function upvote(){
+		//retrieve variables
 		$postid = $_POST['upvote'];
-		$post = ForumPost::loadById($postid);
+		$user = User::loadByUsername($_SESSION['username']);
+		$userid = $user->get('id');
 
-		$ratingid = $post->get('ratingId');
-		$rating = Rating::loadById($ratingid);
+		//check if user previously downvoted
+		$old_rating = Rating::loadByUserAndPostId($userid, $postid);
+		if($old_rating != null){
+			$old_rating->delete();
+			header('Location: '.BASE_URL);
+			exit();
+		} else {
+			//save user's voting preference
+			$rating = new Rating();
+			$rating->set('userId', $userid);
+			$rating->set('postId', $postid);
+			$rating->set('rating', 1);
+			$rating->save();
 
-		$rating->inc();
-
-		header('Location: '.BASE_URL);
+			header('Location: '.BASE_URL);
+			exit();
+		}
 	}
 
 	public function downvote(){
 		$postid = $_POST['downvote'];
-		$post = ForumPost::loadById($postid);
+		$user = User::loadByUsername($_SESSION['username']);
+		$userid = $user->get('id');
 
-		$ratingid = $post->get('ratingId');
-		$rating = Rating::loadById($ratingid);
+		//check if user previously downvoted
+		$old_rating = Rating::loadByUserAndPostId($userid, $postid);
+		if($old_rating != null){
+			$old_rating->delete();
+			header('Location: '.BASE_URL);
+			exit();
+		} else {
+			//save user's voting preference
+			$rating = new Rating();
+			$rating->set('userId', $userid);
+			$rating->set('postId', $postid);
+			$rating->set('rating', -1);
+			$rating->save();
 
-		$rating->dec();
+			header('Location: '.BASE_URL);
+			exit();
+		}
 
 		header('Location: '.BASE_URL);
 	}
