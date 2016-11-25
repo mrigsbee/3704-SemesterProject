@@ -74,7 +74,6 @@ table#t2 {
     text-align: left;
 	font-family: "Helvetica";
 	font-size: 14px;
-	color: white;
 }
 /* END TABLE ELEMENTS */
 
@@ -257,7 +256,7 @@ body {
 #main {
 	width: 1000px;
 	height: 1000px;
-	background: #FFF;
+	background: #E7E5E4;
 	margin: 25px auto;
 	border: solid 2px #D1D1D1;
 }
