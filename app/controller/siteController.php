@@ -171,6 +171,7 @@ class SiteController {
 		$post->save();
 
 		$rating->set('postId', $post->get('id'));
+		$rating->save();
 		header('Location: '.BASE_URL);
 	}
 

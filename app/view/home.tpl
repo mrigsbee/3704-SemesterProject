@@ -36,16 +36,27 @@
           <a href="#">CRN 22222</a>
         </div>
       </div>
+  </div>
+
+    <div id="tall_rectangle">
     </div>
 
-    <div id="tall_rectangle"></div>
 
     <!-- New forum post button -->
-    <form id="newforumpost" method="POST" action="<?= BASE_URL ?>/newpost" class="form-horizontal" role="form">
-        <button>
-          New Forum Post
-        </button>
-    </form>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <form id="newforumpost" method="POST" action="<?= BASE_URL ?>/newpost" class="form-horizontal" role="form">
+                <button>New Forum Post</button>
+            </form>
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
+    </div>
+
 
     <!-- Forum Posts  -->
     <table id="t1">
@@ -92,11 +103,11 @@
                               </div>
 
                               <div id="delete_box">
-                              <form id="delete" method="POST" action="'.BASE_URL.'/deletepost" class="form-horizontal" role="form">
-                                  <input type="hidden" name="delete" value="'.$post->get('id').'"/>
-                                  <button>
-                                    <img style="width:20px;height:20px;" src="'.BASE_URL.'/public/images/trash.png"/>
-                                  </button>
+                                  <form id="delete" method="POST" action="'.BASE_URL.'/deletepost" class="form-horizontal" role="form">
+                                      <input type="hidden" name="delete" value="'.$post->get('id').'"/>
+                                      <button>
+                                        <img style="width:20px;height:20px;" src="'.BASE_URL.'/public/images/trash.png"/>
+                                      </button>
                                   </form>
                               </div>
 
@@ -107,13 +118,12 @@
                             $userid = $post->get('userId');
                             $user_row = User::loadById($userid);
                             $author = $user_row->get('username');
-                			echo '<td><h5>submitted on '.$post->get('timestamp').' by <em>'.$author.'</em> to <em>'.$post->get('tag').'</em></h5></td>
+                		echo '</tr>
+                		<tr>
+                			<td><h5>'.$post->get('description').'</h5></td>
                 		</tr>
                 		<tr>
-                			<td>'.$post->get('description').'</td>
-                		</tr>
-                		<tr>
-                			<td><div id="comments">9 comments</h5></div>
+                			<td><p class="comments">9 comments | submitted on <b>'.$post->get('timestamp').'</b> by <i>'.$author.'</i> to <u>'.$post->get('tag').'</u></p></td>
                 		</tr>
                 	</table></td>
               	  </tr>';
