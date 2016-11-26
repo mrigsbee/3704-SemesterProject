@@ -18,7 +18,32 @@
 
       <h1> CRNShare </h1>
 
-      <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <span id="error">
+          <?php
+              if(isset($_SESSION['error']))
+              {
+                  if($_SESSION['error'] != '')
+                  {
+                      echo '<div class="alert alert-info" role="alert">'.$_SESSION["error"].'</div>';
+                      $_SESSION['error'] = '';
+                  }
+              }
+          ?>
+      </span>
+      <span id="info">
+          <?php
+              if(isset($_SESSION['info']))
+              {
+                  if($_SESSION['info'] != '')
+                  {
+                      echo '<div class="alert alert-info" role="alert">'.$_SESSION["info"].'</div>';
+                      $_SESSION['info'] = '';
+                  }
+              }
+          ?>
+      </span>
+
+      <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
         <div class="panel panel-info" >
           <div class="panel-heading">
             <div class="panel-title">Sign In</div>
@@ -29,8 +54,7 @@
 
             <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
-            <form id="loginform" class="form-horizontal" role="form">
-
+            <form method="POST" action="<?= BASE_URL ?>/postlogin" class="form-horizontal" role="form">
               <div style="margin-bottom: 25px" class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                 <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">
@@ -40,7 +64,7 @@
                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                 <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
               </div>
-          </form>
+
 
               <div class="input-group">
                 <div class="checkbox">
@@ -52,10 +76,11 @@
 
 
               <div style="margin-top:10px" class="form-group">
-                <div class="col-sm-12 controls">
-                  <a id="btn-login" href="#" class="btn btn-success">Login</a>
-                </div>
+                  <button class="btn btn-success" type="submit">
+                    Login
+                  </button>
               </div>
+            </form>
 
 
                 <div class="col-md-12 control">
