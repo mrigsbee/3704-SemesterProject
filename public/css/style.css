@@ -373,6 +373,7 @@ button {
 }
 
 .jumbotron{
+	background-color: #e7e5e4;
 	width: 1000px;
  	height: 800px;
  	margin: 25px auto;
