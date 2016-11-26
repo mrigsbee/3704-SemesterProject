@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="css/signin_crn.css">
-  <title>Sign Up</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="<?= BASE_URL ?>/public/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?= BASE_URL ?>/public/css/style.css" type="text/css" rel="stylesheet">
+  <!-- <link rel="stylesheet" type="text/css" href="css/signin_crn.css"> -->
+  <title>Sign Up</title>
 
 </head>
 
@@ -14,7 +16,7 @@
 
     <div class="jumbotron">
 
-      <h1> CRNShare </h1>
+      <h1 class='elegantshadow'> CRNShare </h1>
 
       <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
         <div class="panel panel-info">
