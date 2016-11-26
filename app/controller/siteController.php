@@ -35,6 +35,9 @@ class SiteController {
 			case 'signup':
 				$this->signup();
 				break;
+			case 'register':
+				$this->register();
+				break;
 			case 'login':
 				$this->login();
 				break;
@@ -273,7 +276,7 @@ class SiteController {
 			$userName = $user->get('username');
 		}
 	}
-	public function signupRegister() {
+	public function register() {
 		// get post data
 		$username  = $_POST['username'];
 		$passwd = $_POST['passwd'];
