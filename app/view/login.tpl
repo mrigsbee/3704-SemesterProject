@@ -82,15 +82,13 @@
               </div>
             </form>
 
-                <!-- Sign Up -->
-                <div class="col-md-12 control">
-                    Don't have an account?
-                    <form method="POST" action="<?= BASE_URL ?>/signup" class="form-horizontal">
-                        <button class="btn btn-info btn-sm">
-                          Sign Up Here
-                        </button>
-                    </form>
-              </div>
+            <!-- Sign Up -->
+            Don't have an account?
+            <form method="POST" action="<?= BASE_URL ?>/signup" class="form-horizontal">
+                <button class="btn btn-info btn-sm">
+                  Sign Up Here
+                </button>
+            </form>
 
           </div>
         </div>
