@@ -65,7 +65,7 @@
                 <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
               </div>
 
-
+              <!-- Remember me -->
               <div class="input-group">
                 <div class="checkbox">
                   <label>
@@ -74,7 +74,7 @@
                 </div>
               </div>
 
-
+              <!-- Login -->
               <div style="margin-top:10px" class="form-group">
                   <button class="btn btn-success" type="submit">
                     Login
@@ -82,16 +82,14 @@
               </div>
             </form>
 
-
+                <!-- Sign Up -->
                 <div class="col-md-12 control">
-                  <div style="padding-top:15px; font-size:85%" >
-                    Don't have an account!
+                    Don't have an account?
                     <form method="POST" action="<?= BASE_URL ?>/signup" class="form-horizontal">
-                        <button class="btn btn-info">
+                        <button class="btn btn-info btn-sm">
                           Sign Up Here
                         </button>
                     </form>
-                  </div>
               </div>
 
           </div>
