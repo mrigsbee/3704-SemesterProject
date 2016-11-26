@@ -59,13 +59,6 @@
               </div>
 
               <div class="form-group">
-                <label for="icode" class="col-md-3 control-label">Team Name</label>
-                <div class="col-md-9">
-                  <input type="text" class="form-control" name="icode" placeholder="">
-                </div>
-              </div>
-
-              <div class="form-group">
                 <!-- Button -->
                 <div class="col-md-offset-3 col-md-9">
                   <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i>Sign Up</button>

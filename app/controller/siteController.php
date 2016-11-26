@@ -231,7 +231,6 @@ class SiteController {
 	}
 
 	public function signup(){
-		$teams = Team::getAllTeams();
 		include_once SYSTEM_PATH.'/view/signup.tpl';
 	}
 
@@ -277,7 +276,6 @@ class SiteController {
 	public function signupRegister() {
 		// get post data
 		$username  = $_POST['username'];
-		$teamname = $_POST['nteams'];
 		$passwd = $_POST['passwd'];
 		$email  = $_POST['email'];
 
