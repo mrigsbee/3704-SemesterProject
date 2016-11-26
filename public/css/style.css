@@ -371,3 +371,10 @@ button {
    overflow: hidden;
    outline:none;
 }
+
+.jumbotron{
+	width: 1000px;
+ 	height: 800px;
+ 	margin: 25px auto;
+ 	border: solid 2px #D1D1D1;
+}

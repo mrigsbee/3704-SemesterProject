@@ -15,3 +15,6 @@ RewriteRule ^newpost_submit/?$ app/controller/siteController.php?action=newpost_
 RewriteRule ^deletepost/?$ app/controller/siteController.php?action=deletepost [QSA,L]
 RewriteRule ^upvote/?$ app/controller/siteController.php?action=upvote [QSA,L]
 RewriteRule ^downvote/?$ app/controller/siteController.php?action=downvote [QSA,L]
+RewriteRule ^login/?$ app/controller/siteController.php?action=login [QSA,L]
+RewriteRule ^signup/?$ app/controller/siteController.php?action=signup [QSA,L]
+RewriteRule ^postlogin/?$ app/controller/siteController.php?action=postlogin [QSA,L]
