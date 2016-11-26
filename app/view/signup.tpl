@@ -18,21 +18,13 @@
 
       <h1 class='elegantshadow'> CRNShare </h1>
 
-      <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div id="signupbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
         <div class="panel panel-info">
           <div class="panel-heading">
             <div class="panel-title">Sign Up</div>
-            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
           </div>
           <div class="panel-body" >
             <form id="signupform" class="form-horizontal" role="form">
-
-              <div id="signupalert" style="display:none" class="alert alert-danger">
-                <p>Error:</p>
-                <span></span>
-              </div>
-
-
 
               <div class="form-group">
                 <label for="email" class="col-md-3 control-label">Email</label>
@@ -61,18 +53,10 @@
               </div>
 
               <div class="form-group">
-                <!-- Button -->
                 <div class="col-md-offset-3 col-md-9">
                   <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i>Sign Up</button>
                 </div>
               </div>
-
-              <div style="padding-top:20px"  class="form-group">
-
-              </div>
-
-
-
             </form>
           </div>
         </div>
@@ -80,6 +64,7 @@
     </div>
   </div>
 
-
+  <script type="text/javascript" src="<?= BASE_URL ?>/public/js/main.js"></script>
+  <script src="<?= BASE_URL ?>/public/js/bootstrap.min.js"></script>
 </body>
 </html>
