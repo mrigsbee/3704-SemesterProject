@@ -16,7 +16,7 @@
 
     <div class="jumbotron">
 
-      <h1> CRNShare </h1>
+      <h1 class='elegantshadow'> CRNShare </h1>
 
       <span id="error">
           <?php
