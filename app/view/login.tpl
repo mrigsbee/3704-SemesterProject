@@ -52,16 +52,14 @@
 
           <div style="padding-top:30px" class="panel-body" >
 
-            <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-
             <form method="POST" action="<?= BASE_URL ?>/postlogin" class="form-horizontal" role="form">
               <div style="margin-bottom: 25px" class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">
+                <span class="input-group-addon"><i class='fa fa-user' aria-hidden='true'></i></span>
+                <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username">
               </div>
 
               <div style="margin-bottom: 25px" class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <span class="input-group-addon"><i class='fa fa-lock' aria-hidden='true'></i></span>
                 <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
               </div>
 
@@ -96,6 +94,7 @@
     </div>
   </div>
 
+  <script src="https://use.fontawesome.com/625f8d2098.js"></script>
   <script type="text/javascript" src="<?= BASE_URL ?>/public/js/main.js"></script>
   <script src="<?= BASE_URL ?>/public/js/bootstrap.min.js"></script>
 </body>

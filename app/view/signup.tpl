@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
   <link href="<?= BASE_URL ?>/public/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?= BASE_URL ?>/public/css/style.css" type="text/css" rel="stylesheet">
-  <!-- <link rel="stylesheet" type="text/css" href="css/signin_crn.css"> -->
   <title>Sign Up</title>
 
 </head>
@@ -48,41 +47,34 @@
           <div class="panel-heading">
             <div class="panel-title">Sign Up</div>
           </div>
-          <div class="panel-body" >
+          <div class="panel-body">
             <form method="POST" action="<?= BASE_URL ?>/register" class="form-horizontal" role="form">
 
-              <div class="form-group">
-                <label for="email" class="col-md-3 control-label">Email</label>
-                <div class="col-md-9">
-                  <input type="text" class="form-control" name="email" placeholder="Email Address">
+                <div style="margin-bottom: 25px" class="input-group">
+                  <span class="input-group-addon"><i class='fa fa-user-circle' aria-hidden='true'></i></span>
+                  <input type="text" class="form-control" name="name" placeholder="name">
                 </div>
-              </div>
 
-              <div class="form-group">
-                <label for="name" class="col-md-3 control-label">Name</label>
-                <div class="col-md-9">
-                  <input type="text" class="form-control" name="name" placeholder="Name">
+                <div style="margin-bottom: 25px" class="input-group">
+                  <span class="input-group-addon"><i class='fa fa-user' aria-hidden='true'></i></span>
+                  <input type="text" class="form-control" name="username" placeholder="username">
                 </div>
-              </div>
-              <div class="form-group">
-                <label for="username" class="col-md-3 control-label">Username</label>
-                <div class="col-md-9">
-                  <input type="text" class="form-control" name="username" placeholder="Username">
+
+                <div style="margin-bottom: 25px" class="input-group">
+                  <span class="input-group-addon"><i class='fa fa-lock' aria-hidden='true'></i></span>
+                  <input type="password" class="form-control" name="passwd" placeholder="password">
                 </div>
-              </div>
-              <div class="form-group">
-                <label for="password" class="col-md-3 control-label">Password</label>
-                <div class="col-md-9">
-                  <input type="password" class="form-control" name="passwd" placeholder="Password">
+
+                <div style="margin-bottom: 25px" class="input-group">
+                  <span class="input-group-addon"><i class='fa fa-envelope' aria-hidden='true'></i></span>
+                  <input type="text" class="form-control" name="email" placeholder="email">
                 </div>
-              </div>
 
               <div class="form-group">
                 <div class="col-md-offset-3 col-md-9">
                   <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Sign Up</button>
                 </div>
               </div>
-
             </form>
           </div>
         </div>
@@ -90,6 +82,7 @@
     </div>
   </div>
 
+ <script src="https://use.fontawesome.com/80358a383e.js"></script>
   <script type="text/javascript" src="<?= BASE_URL ?>/public/js/main.js"></script>
   <script src="<?= BASE_URL ?>/public/js/bootstrap.min.js"></script>
 </body>
