@@ -11,7 +11,11 @@
 <body>
 
   <div id="med_rectangle">
-    <div id="signout">Sign Out</div>
+  <form id="signout" action="<?= BASE_URL ?>/logout">
+        <button type="submit" class="btn btn-info btn-sm">
+          <i class="fa fa-sign-out" aria-hidden="true"></i> logout
+        </button>
+    </form>
     <div id="signedin">Signed in as <em><?php echo $_SESSION['username']?></em></div>
   </div>
 

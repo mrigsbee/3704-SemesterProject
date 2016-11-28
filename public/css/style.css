@@ -347,13 +347,11 @@ div#tall_rectangle {
 }
 
 #signout {
-    background-color: #35659c;
     float: right;
     color: white;
     font-family: "Helvetica";
     padding: 5px;
     font-size: 10px;
-	border: solid 1px #D1D1D1;
 	vertical-align: text-top;
 }
 /* END ELEMENT HOLDERS */

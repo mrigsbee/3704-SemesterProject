@@ -56,6 +56,9 @@ class SiteController {
 			case 'downvote':
 				$this->downvote();
 				break;
+			case 'logout':
+				$this->logout();
+				break;
 		}
 	}
 
@@ -258,7 +261,6 @@ class SiteController {
 		else
 		{
 			$_SESSION['username'] = $un;
-			$_SESSION['success'] = "Welcome back, <u>".$un."</u>!";
 			header('Location: '.BASE_URL);
 		}
 	}
@@ -344,5 +346,14 @@ class SiteController {
 		$_SESSION['success'] = "You successfully registered as ".$username.".";
 		header('Location: '.BASE_URL);
 		exit();
+	}
+
+	public function logout(){
+		// erase the session
+		unset($_SESSION['username']);
+		session_destroy();
+
+		// redirect to home page
+		header('Location: '.BASE_URL);
 	}
 }
